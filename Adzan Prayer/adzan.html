@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily  Player Siak Sri Indrapura</title>
+
+    <style>
+        body, td, th {font-family: "trebuchet MS"; font-size: 19px; color: #fff;padding-top: 8px;margin-left: 0px;}
+        #timetable {border-width: 0px; border-style: outset; border-collapse: collapse; border-color: gray; width: 9em;}
+        #timetable td, #timetable th {border-width: 0px; border-spacing: 0px; padding-right: 1.369em; border-style: inset; border-color: #CCCCCC;}
+        #timetable th {color:black; *text-align: center; font-weight: bold; background-color: #F8F7F4;}
+        div.prayss{
+            background-color: orange;
+            width:600px;
+            height:100px;
+ 
+        }
+ 
+        div.tablex{
+            position: relative;
+            top: 20px;
+            left:210px;
+        }
+        div.kotass{
+            position: relative;
+            top:9px;
+            left:58px;
+            font-size: 11px;
+        }
+
+        a{
+            text-decoration: none;
+            font-family: "trebuchet MS"; font-size: 20px; color: #fff;
+        }
+
+        body {
+    margin: 2px;
+    padding: 25px;
+    font-family: 'Open sans', sans-serif;
+    background-image: url(abstract-yellow.jpg) ;
+    background-position: center;
+    background-size: cover ;
+    background-color: rgb(245, 241, 245);
+}
+    </style>
+</head>
+<body>
+
+    <marquee bgcolor="orange">
+
+    <script type="text/javascript" src="PrayTimes.js"></script>
+<a href="" target="_parent">
+<div class="prayss">
+    <div class="tablex">
+    <div   id="table"></div>
+    <script type="text/javascript">
+         
+        var date = new Date(); // today
+        var times = prayTimes.getTimes(date, [ 0.783255, 	102.069801], +7);
+        var list = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+ 
+        var html = '<table id="timetable"><tr>';
+           
+ 
+            for(var i in list)  {
+            //html += '<tr><td>'+ list[i]+ '</td>';
+            html += '<td><span>'+ list[i]+"</span><br/>"+times[list[i].toLowerCase()]+ '</td>';
+        }
+        html += '</tr></table>';
+        document.getElementById('table').innerHTML = html;
+         
+    </script>
+     </div>
+    
+     <div class="kotass">
+        Siak , 
+        <script type="text/javascript">
+        //var dayxx = currentDate.getDate();
+        var objToday = new Date(),
+                        weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'),
+                        dayOfWeek = weekday[objToday.getDay()],
+                        domEnder = new Array( 'th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th' ),
+                        dayOfMonth = today + (objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder[objToday.getDate()] : objToday.getDate() + domEnder[parseFloat(("" + objToday.getDate()).substr(("" + objToday.getDate()).length - 1))],
+                        months = new Array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'),
+                        curMonth = months[objToday.getMonth()],
+                        curYear = objToday.getFullYear(),
+                        curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+                        curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+                        curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+                        curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+        //var today = curHour + ":" + curMinute + "." + curSeconds + curMeridiem + " " + dayOfWeek + " " + dayOfMonth + " of " + curMonth + ", " + curYear;
+        var dayxx = objToday.getDate();
+        var today =  dayxx+" "+ curMonth + " " + curYear;
+        document.write(today);
+        </script>
+        </div> 
+        <div style="font-size:20pt;position:absolute;margin:-40px 0px 0px 34px;">Jadwal Sholat</div>
+
+</div>
+</a>
+</marquee>
+<br>
+
+<h2 align="justify"><font face="Courier" color="orange" size="5">Adzan Prayer Times, 
+    Siak Sri Indrapura</font></h2>
+
+<center>
+    <br><br>
+<img src="mesjid-removebg-preview.png" width="700" height="400">
+<img src="Screenshot__40_-removebg-preview.png" width="550" height="450">
+</br></br>
+</center>
+
+    
+</body>
+</html>
